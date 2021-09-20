@@ -1,11 +1,6 @@
 # benchmarking-algorithms
 
-A Java Benchmarking program to compare the average running times of five Sorting Algorithms:<space><space><space><space>*<space> 
-  Bubble Sort 
-  Heap Sort 
-  Bucket Sort 
-  Insertion Sort 
-  Quick Sort
+A Java Benchmarking program to compare the average running times of five Sorting Algorithms.
   
 Both worst and best times are displayed to gain a greater view of each sorting algorithm. 
 Repository also contains a Project Report, detailing and examining the selected algorithms and concludes results.
