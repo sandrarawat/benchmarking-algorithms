@@ -1,5 +1,4 @@
 package ie.gmit.dip;
-import java.util.Arrays;
 import java.util.Stack;
 
 /**
@@ -8,35 +7,6 @@ import java.util.Stack;
  *
  */
 public class SortAlgorithms {
-	public static final boolean ENABLE_PRINT = false;
-
-	public static void main(String[] args) {
-//        int[] array = new int[]{3,5,3,0,8,6,1,5,8,6,2,4,9,4,7,0,1,8,9,7,3,1,2,5,9,7,4,0,2,6};
-		int[] array = new int[] { 5, 3, 9, 1, 6, 4, 10, 2, 8, 7, 15, 3, 2 };
-//        int[] array = new int[]{1, 1, 0};
-
-		System.out.println("Before: " + Arrays.toString(array));
-//		SortAlgorithms.insertionSort(array);
-//        SortAlgorithms.shellSort(array);
-//        SortAlgorithms.selectionSort(array);
-//        SortAlgorithms.heapSort(array);
-//        SortAlgorithms.bubbleSort(array);
-//        SortAlgorithms.quickSort(array, 0, array.length-1);
-//        SortAlgorithms.quickSortByStack(array);
-//        array = SortAlgorithms.mergingSort(array);
-//        SortAlgorithms.radixSort(array);
-		//System.out.println("After:  " + Arrays.toString(array));
-	}
-
-	/**
-	 * 
-	 */
-	private static void System_out_println(String str) {
-		if (ENABLE_PRINT) {
-			System.out.println(str);
-		}
-	}
-
 	public static void heapSort(int[] arr) {
 		for (int i = arr.length; i > 0; i--) {
 			max_heapify(arr, i);
@@ -66,14 +36,7 @@ public class SortAlgorithms {
 				arr[maxChildId] = temp;
 			}
 		}
-		//System_out_println("Max_Heapify: " + Arrays.toString(arr));
 	}
-
-	/**
-	
-	
-	
-	 */
 	public static void bubbleSort(int[] arr) {
 		for (int i = arr.length - 1; i > 0; i--) {
 			for (int j = 0; j < i; j++) {
@@ -81,7 +44,6 @@ public class SortAlgorithms {
 					int temp = arr[j];
 					arr[j] = arr[j + 1];
 					arr[j + 1] = temp;
-					//System_out_println("Sorting: " + Arrays.toString(arr));
 				}
 			}
 		}
@@ -96,13 +58,9 @@ public class SortAlgorithms {
 					int temp = arr[j];
 					arr[j] = arr[j + 1];
 					arr[j + 1] = temp;
-					//System_out_println("Sorting: " + Arrays.toString(arr));
 				}
 	}
 
-	/**
-	
-	 */
 	public static void quickSort(int[] arr, int low, int high) {
 		if (arr.length <= 0)
 			return;
@@ -123,14 +81,10 @@ public class SortAlgorithms {
 			arr[right] = arr[left];
 		}
 		arr[left] = temp;
-		//System_out_println("Sorting: " + Arrays.toString(arr));
 		quickSort(arr, low, left - 1);
 		quickSort(arr, left + 1, high);
 	}
 
-	/**
-	
-	 */
 	public static void quickSortByStack(int[] arr) {
 		if (arr.length <= 0)
 			return;
@@ -186,7 +140,6 @@ public class SortAlgorithms {
 				int temp = arr[j];
 				arr[j] = arr[j - 1];
 				arr[j - 1] = temp;
-			//System_out_println("Sorting:  " + Arrays.toString(arr));
 			}
 		}
 	}
