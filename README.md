@@ -1,8 +1,8 @@
 # benchmarking-algorithms
 
-A Java Benchmakring program to compare the average running times of five Sorting Algorithms with respect to a certain performance measure. 
+A Java Benchmarking program to compare the average running times of five Sorting Algorithms. 
 Both worst and best times are displayed to gain a greater view of each sorting algorithm. 
-Repository also contains Project Report, detailing and exmaining the selected algorithms and concludes results.
+Repository also contains a Project Report, detailing and exmaining the selected algorithms and concludes results.
 
 ## Process followed to examine the average times for the sorting algorithms:
 1. Generate random arrays of the input sizes in increments of ‘000 [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000,10000].
