@@ -137,26 +137,7 @@ public class Benchmarking {
 
 	// Execute an algorithm on an input and return its runtime.
 	private static String execute(Function<int[], int[]> algorithm, int[] input, int[] reference) {
-		// To get accurate results even for small inputs, we repeat
-		// the algorithm several times in a row and count the total time.
-		// We pick the number of repetitions automatically so that
-		// the total time is at least 10ms.
-		//
-		// To pick the number of repetitions, we start by assuming
-		// that one repetition will be enough. We then execute the
-		// algorithm and measure how long it takes. If it took less
-		// than 10ms, we scale up the number of repetitions by
-		// an appropriate factor. E.g., if the algorithm only took
-		// 1ms, we will multiply the number of repetitions by 10.
-		// We then repeat this whole process with the new number of
-		// repetitions.
-		//
-		// Once the repetitions take more than 10ms, we try it three
-		// times and take the smallest measured runtime. This avoids
-		// freakish results due to e.g. the garbage collector kicking
-		// in at the wrong time.
 
-		// The final result of the algorithm.
 		int[] result = {};
 		// How many repetitions we use for warm-up
 		int warmUp = 3;
