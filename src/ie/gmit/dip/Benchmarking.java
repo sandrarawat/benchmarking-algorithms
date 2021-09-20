@@ -3,7 +3,7 @@ package ie.gmit.dip;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Benchmarking {
+final class Benchmarking {
 	/** Main function **/
 
 	public static void main(final String[] args) {
@@ -14,15 +14,15 @@ public class Benchmarking {
 
 	// Generates a random array of size 'size'.
 	// Part of the array is sorted, while the rest is chosen uniformly
-	// at random; the 'randomness' parameter sets what percent of the
+	// at random; the 'percentRandom' parameter sets what percent of the
 	// array is chosen at random.
-	public static int[] generateSample(int size, int randomness) {
+	public static int[] generateSample(int size, int percentRandom) {
 		int[] sample = new int[size];
 
 		Random random = new Random();
 		int previousElement = 0;
 		for (int i = 0; i < size; i++) {
-			if (random.nextInt(100) >= randomness) {
+			if (random.nextInt(100) >= percentRandom) {
 				int randomOffset = random.nextInt(3);
 				int currentElement = previousElement + randomOffset;
 				sample[i] = currentElement;
@@ -83,7 +83,7 @@ public class Benchmarking {
 
 	/** Auxiliary code, that measures performance of sorting algorithms **/
 
-	private static int[] SAMPLE_SIZES = new int[] { 250, 500, 1000, 1500, 2000, 2500, 5000, 7500, 10000 };
+	private static int[] SAMPLE_SIZES = new int[] { 1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000 };
 
 	private static void executionTimeReport() {
 		for (int size : SAMPLE_SIZES) {
@@ -139,11 +139,11 @@ public class Benchmarking {
 	private static String execute(Function<int[], int[]> algorithm, int[] input, int[] reference) {
 
 		int[] result = {};
-		// How many repetitions we use for warm-up
+		// How many repetitions used for warm-up
 		int warmUp = 3;
-		// How many repetitions we use to calculate average
+		// How many repetitions used to calculate average
 		int repetitions = 10;
-		// The lowest runtime we saw with the current number of repetitions.
+		// The lowest runtime with the current number of repetitions.
 		long runtime = 0;
 		try {
 			// Build the input arrays in advance to avoid memory
