@@ -1,7 +1,7 @@
 # benchmarking-algorithms
 
 A Java Benchmarking program to compare the average running times of five Sorting Algorithms:
-  Bubble Sort 
+  <space><space><space><space>*<space> Bubble Sort 
   Heap Sort 
   Bucket Sort 
   Insertion Sort 
